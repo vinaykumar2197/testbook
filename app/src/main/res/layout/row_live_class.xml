@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:layout_marginLeft="16dp"
+    app:cardBackgroundColor="#597E5D"
+    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="36dp"
+    android:orientation="vertical"
+
+    >
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_tb_select_title_for_dark"
+        />
+
+    <TextView
+        android:id="@+id/tv_course_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SSC CPO Live Coaching"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/iv_logo"
+        />
+
+<LinearLayout
+    android:id="@+id/ll_details"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="20dp"
+    android:layout_alignParentBottom="true"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_video"
+        android:text="250+ Live Classes"
+        android:textColor="@android:color/white"
+        android:drawablePadding="8dp"
+        android:paddingLeft="4dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_bookmark"
+        android:text="7000+ Questions"
+        android:textColor="@android:color/white"
+        android:drawablePadding="8dp"
+        android:textSize="14sp"
+        android:paddingLeft="2dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_pdf"
+        android:text="150+ Notes"
+        android:textColor="@android:color/white"
+        android:drawablePadding="14dp"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp"
+        android:paddingLeft="4dp"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/test_1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/ll_details"
+        android:scaleType="centerCrop"
+        />
+
+
+
+
+
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>
