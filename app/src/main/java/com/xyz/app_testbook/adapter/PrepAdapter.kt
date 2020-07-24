@@ -7,8 +7,11 @@ import android.view.View.OnLongClickListener
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.xyz.app_testbook.R
+import com.xyz.app_testbook.data.remote.model.Class
+import kotlinx.android.synthetic.main.row_live_class.view.*
 
 
 class PrepAdapter :
@@ -36,32 +39,36 @@ class PrepAdapter :
         RecyclerView.ViewHolder(itemView) {
         fun bind(posiiton: Int) {
             val item = getItem(posiiton)
+//            https://cdn.testbook.com/images/production/472-X-200-faculty-final_product_facultiesImage_all_1594794875.png
+            itemView.tv_course_name.text = item.titles!!
+            itemView.tv_live_class.text = item.summary!!.module!!.count!!.video.toString()+"+ Live Classes"
+            itemView.tv_questions.text = item.summary!!.module!!.count!!.quiz.toString()+"+ Questions"
+            itemView.tv_notes.text = item.summary!!.module!!.count!!.notes.toString()+"+ Notes"
 
-            itemView.tv_conversation_details.text = "${item.id} : ${item.activityName}"
-
-//            holder.cardView.setOnLongClickListener(OnLongClickListener { false })
-
-            itemView.ll_list.setOnClickListener  {
-                (itemView.context as ConversationSelectorActivity).startChatActivity(item.id.toString())
-            }
-
+            itemView.iv_course_logo.setColorFilter(R.color.colorPrimary)
+//            Glide
+//                .with(itemView.context)
+//                .load("https:"+item.courseLogo!!)
+//                .centerCrop()
+//                .placeholder(R.drawable.test_1)
+//                .into(itemView.iv_course_logo);
         }
     }
 
 
-    val arrayList = ArrayList<ConversationListModel>()
+    val arrayList = ArrayList<Class>()
     var word : String = ""
 
 
-    fun submitList(list: List<ConversationListModel>) {
-        val diffUtil = DiffUtil.calculateDiff(ConversationListAdapter.DiffUtils(list, arrayList))
+    fun submitList(list: List<Class>) {
+        val diffUtil = DiffUtil.calculateDiff(PrepAdapter.DiffUtils(list, arrayList))
         diffUtil.dispatchUpdatesTo(this)
         arrayList.clear()
         arrayList.addAll(list)
 //        notifyDataSetChanged()
     }
 
-    fun getItem(position: Int): ConversationListModel {
+    fun getItem(position: Int): Class {
         return arrayList.get(position)
     }
 
@@ -71,7 +78,7 @@ class PrepAdapter :
 
 
 
-    class DiffUtils(val newList: List<ConversationListModel>, val oldList: ArrayList<ConversationListModel>) :
+    class DiffUtils(val newList: List<Class>, val oldList: ArrayList<Class>) :
         DiffUtil.Callback() {
         val currentGson = Gson()
         override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {

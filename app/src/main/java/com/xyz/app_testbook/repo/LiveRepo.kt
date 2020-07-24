@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.xyz.app_testbook.base.BaseRepo
+import com.xyz.app_testbook.data.remote.model.LiveModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
@@ -23,20 +24,18 @@ class LiveRepo(application: Application) : BaseRepo(application) {
 
 
     var mutableLiveData: MutableLiveData<String> = MutableLiveData()
-    var previewData: MutableLiveData<PreviewModel> = MutableLiveData()
+    var previewData: MutableLiveData<LiveModel> = MutableLiveData()
 
 
     fun getLivePrepData() {
 
         apiService.getLivePrepData(
-            bot_id,
-            cid
         )
             .subscribeOn(Schedulers.single())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
 
-                previewData.postValue(true)
+                previewData.postValue(it)
 //                print("message_list : "+ listOptions);
 
             }, {
