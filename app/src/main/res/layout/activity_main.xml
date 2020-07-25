@@ -18,11 +18,20 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 
-    <com.xyz.app_testbook.custom_view.CircularTextView
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:layout_below="@id/recyclerView"
-        android:visibility="gone"
-        />
+<!--    <com.xyz.app_testbook.custom_view.CustomView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/recyclerView"-->
+<!--        />-->
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/heart_vector"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="220dp"-->
+<!--        android:src="@drawable/ic_standard_bg"-->
+<!--        android:layout_below="@id/recyclerView"-->
+<!--        android:visibility="gone"-->
+<!--        />-->
 
 </RelativeLayout>
