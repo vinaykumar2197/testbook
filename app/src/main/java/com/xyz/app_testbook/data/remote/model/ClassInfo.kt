@@ -8,6 +8,12 @@ class ClassInfo {
     @SerializedName("googleAdsImage")
     @Expose
     var googleAdsImage: String? = null
+    @SerializedName("courseSellingImage")
+    @Expose
+    var courseSellingImage: String? = null
+    @SerializedName("facultiesImage")
+    @Expose
+    var facultiesImage: String? = null
     @SerializedName("subjectWiseSyllabus")
     @Expose
     var subjectWiseSyllabus: SubjectWiseSyllabus? = null

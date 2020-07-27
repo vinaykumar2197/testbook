@@ -8,11 +8,14 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.xyz.app_testbook.R
 import com.xyz.app_testbook.TestBookApp
+import com.xyz.app_testbook.local.UserSharedPrefs
 import javax.inject.Inject
 
 open class BaseActivity : AppCompatActivity(),TestBookApp.InternetConnectionListener{
 
 
+    @Inject
+    lateinit var userSharedPrefs: UserSharedPrefs
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (application as TestBookApp).component?.inject(this)

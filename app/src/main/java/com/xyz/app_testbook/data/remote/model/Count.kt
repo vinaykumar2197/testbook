@@ -5,6 +5,12 @@ import com.google.gson.annotations.SerializedName
 
 
 class Count {
+    @SerializedName("Doubt Class")
+    @Expose
+    var doubtClasses: Int? = null
+    @SerializedName("Live Class")
+    @Expose
+    var liveClasses: Int? = null
     @SerializedName("Notes")
     @Expose
     var notes: Int? = null

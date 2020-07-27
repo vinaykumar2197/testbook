@@ -6,12 +6,16 @@ import android.widget.Toast
 import com.xyz.app_testbook.TestBookApp
 import com.xyz.app_testbook.data.remote.ApiInterface
 import com.xyz.app_testbook.local.AppDatabase
+import com.xyz.app_testbook.local.UserSharedPrefs
 import javax.inject.Inject
 
 open class BaseRepo {
 
     @Inject
     lateinit var apiService: ApiInterface
+
+    @Inject
+    lateinit var userSharedPrefs: UserSharedPrefs
 
 
     constructor(application: Application) {

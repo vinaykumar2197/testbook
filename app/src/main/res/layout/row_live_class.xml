@@ -26,7 +26,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginRight="16dp"
     android:layout_marginLeft="16dp"
     android:layout_marginTop="36dp"
     android:orientation="vertical"
@@ -53,7 +52,9 @@
         />
 
 
-    <TextView android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/tv_starts_in"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Starts in 1 Day"
         android:padding="5dp"
@@ -63,11 +64,12 @@
         android:layout_below="@id/iv_logo"
         android:drawableLeft="@drawable/ic_time"
         android:drawablePadding="4dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/rounded_corner"
         />
 
 
-<LinearLayout
+    <LinearLayout
     android:id="@+id/ll_details"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -124,13 +126,13 @@
 
     <ImageView
         android:id="@+id/iv_course_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:src="@drawable/test_1"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/ll_details"
-        android:scaleType="fitXY"
+        android:layout_marginLeft="50dp"
+        android:scaleType="fitEnd"
         />
 
 

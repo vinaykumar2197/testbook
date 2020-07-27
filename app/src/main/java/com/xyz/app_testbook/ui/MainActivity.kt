@@ -41,6 +41,8 @@ class MainActivity : BaseActivity() {
 //                Timber.e("data inserted successfully")
                 setDialog(false, true)
 
+                userSharedPrefs.setCurrentDate(it.curTime)
+
                 adapter.submitList(it.data!!.classes!!)
             }
             else{
